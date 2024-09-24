@@ -5,7 +5,6 @@ def hours_weekly(timesheet_file, week_offset=0):
     hours_worked = 0
 
     desired_week = datetime.now().isocalendar()[1] + week_offset
-    print(desired_week)
 
     for line in timesheet_file:
         line_data = line.rstrip("\n").split("\t")
