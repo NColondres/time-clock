@@ -7,7 +7,7 @@ def hours_weekly(timesheet_file, week_offset=0):
     desired_week = datetime.now().isocalendar()[1] + week_offset
 
     for line in timesheet_file:
-        line_data = line.rstrip("\n").split("\t")
+        line_data = line.rstrip("\n").split()
 
         if len(line_data) < 3:
             print(f"Skipping entry: {"\t".join(line_data)} as it is incomplete.")
