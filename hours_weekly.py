@@ -10,7 +10,7 @@ def hours_weekly(timesheet_file, week_offset=0):
         line_data = line.rstrip("\n").split()
 
         if len(line_data) < 3:
-            print(f"Skipping entry: {"\t".join(line_data)} as it is incomplete.")
+            print(f"Skipping entry: {"   ".join(line_data)} as it is incomplete.")
 
         else:
             starting_date = datetime.strptime(line_data[0], "%b/%d/%y-%I:%M%p")

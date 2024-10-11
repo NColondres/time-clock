@@ -15,7 +15,7 @@ def clockOut(timesheet_file, date_and_time):
     if len(last_entry) == 1:
         date_and_time_string = date_and_time.strftime("%b/%d/%y-%I:%M%p")
 
-        new_entry = "\t".join((last_entry[0], date_and_time_string, str(hours_passed)))
+        new_entry = "   ".join((last_entry[0], date_and_time_string, str(hours_passed)))
 
         # Prevent the first clockout of the file to add an unnecessary
         if len(current_data) == 0:

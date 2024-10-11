@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import os.path
-import clockin, clockout, hours_weekly
+import clockin, clockout, hours_weekly, patch_file
 from datetime import datetime
 
 
@@ -19,7 +19,7 @@ def main():
         print("File does not exist. Creating new timesheet file.")
         timesheet_file = open(TIMESHEET_LOCATION, "w+")
 
-    available_cmds = ["clockin", "clockout", "week"]
+    available_cmds = ["clockin", "clockout", "week", "patch"]
 
     if argument in available_cmds:
         match argument:
@@ -28,6 +28,10 @@ def main():
 
             case "clockout":
                 clockout.clockOut(timesheet_file, DATE_AND_TIME)
+
+            case "patch":
+                patch_file.patch_file(timesheet_file)
+                timesheet_file.close()
 
             case "week":
                 if len(sys.argv) < 3:
