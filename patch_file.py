@@ -13,7 +13,7 @@ def patch_file(timesheet_file):
 
         
 
-        if len(line_data) > 2:
+        if len(line_data) == 2:
 
             clockin_date = datetime.strptime(line_data[0], "%b/%d/%y-%I:%M%p")
             clockout_date = datetime.strptime(line_data[1], "%b/%d/%y-%I:%M%p")
