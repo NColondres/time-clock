@@ -12,7 +12,7 @@ def patch_file(timesheet_file):
         line_data = line.split()
 
         
-
+        # If the line only has a clock-in and clock-out. Then calculate the hours
         if len(line_data) == 2:
 
             clockin_date = datetime.strptime(line_data[0], "%b/%d/%y-%I:%M%p")
